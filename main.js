@@ -22,7 +22,7 @@ input.onkeyup = function () {
 
 const add = something => {
   originalLog('PRINT', something);
-  output.innerHTML = output.innerHTML + '<br/>' + something;
+  output.innerHTML = output.innerHTML + something + '<br/>';
 }
 const originalError = console.error;
 const originalLog = console.log;
