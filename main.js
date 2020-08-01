@@ -6,10 +6,10 @@ output = document.getElementById("output");
 const lastSource = localStorage.getItem("src");
 if (lastSource) input.innerText = lastSource;
 
-document.querySelectorAll('code').forEach((block) => {
-  console.log('Highlight auto');
-  hljs.highlightAuto(block);
-});
+// document.querySelectorAll('code').forEach((block) => {
+//   console.log('Highlight auto');
+//   hljs.highlightAuto(block);
+// });
 
 input.onkeyup = function () {
   localStorage.setItem("src", input.innerText);
