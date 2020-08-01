@@ -8,6 +8,9 @@ if (lastSource) input.innerText = lastSource;
 
 input.onkeyup = function () {
   localStorage.setItem("src", input.innerText);
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightBlock(block);
+  });
 }
 
 const add = something => {
