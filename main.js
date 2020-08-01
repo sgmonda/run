@@ -8,7 +8,7 @@ if (lastSource) input.innerText = lastSource;
 
 document.querySelectorAll('code').forEach((block) => {
   originalLog('Highlight auto');
-  hljs.highlightBlock(block);
+  hljs.highlightAuto(block);
 });
 
 input.onkeyup = function () {
