@@ -7,7 +7,7 @@ const lastSource = localStorage.getItem("src");
 if (lastSource) input.innerText = lastSource;
 
 document.querySelectorAll('code').forEach((block) => {
-  originalLog('Highlight auto');
+  console.log('Highlight auto');
   hljs.highlightAuto(block);
 });
 
