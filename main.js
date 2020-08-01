@@ -3,6 +3,13 @@ console.log("Preparing runner...");
 input = document.getElementById("input");
 output = document.getElementById("output");
 
+const lastSource = localStorage.getItem("src");
+if (lastSource) input.innerText = lastSource;
+
+input.onkeyup = function () {
+  localStorage.setItem("src", input.innerText);
+}
+
 const add = something => {
   originalLog('PRINT', something);
   output.innerHTML = output.innerHTML + something;
