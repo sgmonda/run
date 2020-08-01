@@ -12,7 +12,7 @@ input.onkeyup = function () {
 
 const add = something => {
   originalLog('PRINT', something);
-  output.innerHTML = output.innerHTML + something;
+  output.innerHTML = output.innerHTML + '<br/>' + something;
 }
 const originalError = console.error;
 const originalLog = console.log;
