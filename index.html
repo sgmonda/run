@@ -1,69 +1,24 @@
-
-
 <!DOCTYPE html>
 <html lang="en" style="height: 100%; width: 100%; overflow: hidden">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World! Site Title</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/a11y-dark.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-  </head>
-  <body style="width: 100%; height: 100%; margin: 0; padding: 0; display: flex; font-family: monospace" >
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Simple Javascript Runner</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/a11y-dark.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+   </head>
+   <body style="width: 100%; height: 100%; margin: 0; padding: 0; display: flex; font-family: monospace" >
       <pre style="width: 50% !important; padding: 0; margin: 0; position: relative;">
       <code id="input" class="javascript" contenteditable="true" style="display: initial; position: absolute; left: 0; right: 0; top: 0; bottom: 0; padding: 2em 3.5em 2em 2em; outline: none !important;">console.log(':-)');</code>
     </pre>
-  <div style="width: 50% !important; position: relative">
-    <div id="output" style="padding: 2em 2em 2em 3.5em;"></div>
-    <button id="button-run" style="display: block; position: absolute; left: -1.5em; top: calc(50% - 0.75em); border-radius: 10em; height: 3em; width: 3em; border: solid 5px #333; background-color: #FF5252; color: white; font-size: 1.5em; padding-left: 0.5em">
-      <i class="fas fa-play"></i>
-    </button>
-  </div>
-   <script type="application/json">
-         
-         input = document.getElementById("input");
-output = document.getElementById("output");
-
-const add = something => {
-  originalLog('PRINT', something);
-  output.innerHTML = output.innerHTML  + something;
-}
-const originalError = console.error;
-const originalLog = console.log;
-const originalWarning = console.warn;
-const originalInfo = console.info;
-const originalClear = console.clear;
-
-console.error = function (error) {
-  add(error.toString() + error.stack);
-  originalError.apply(console, arguments);
-};
-console.log = function (...args) {
-  args.forEach(add);
-  originalLog.apply(console, args);
-};
-console.warn = function (...args) {
-  args.forEach(add);
-  originalWarning.apply(console, args);
-};
-console.info = function (...args) {
-  args.forEach(add);
-  originalInfo.apply(console, args);
-};
-console.clear = function (...args) {
-  element.innerHTML = '';
-  originalClear.apply(console, args);
-};
-
-
-document.getElementById("button-run").onclick = function run () {
-     output.innerHTML = '';
-  eval(input.innerText)
-}
-         
-    </script>
-  </body>
+      <div style="width: 50% !important; position: relative">
+         <div id="output" style="padding: 2em 2em 2em 3.5em;"></div>
+         <button id="button-run" style="display: block; position: absolute; left: -1.5em; top: calc(50% - 0.75em); border-radius: 10em; height: 3em; width: 3em; border: solid 5px #333; background-color: #FF5252; color: white; font-size: 1.5em; padding-left: 0.5em">
+         <i class="fas fa-play"></i>
+         </button>
+      </div>
+      <script type="application/json" src="./main.js"></script>
+   </body>
 </html>
