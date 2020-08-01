@@ -6,20 +6,17 @@ output = document.getElementById("output");
 const lastSource = localStorage.getItem("src");
 if (lastSource) input.innerText = lastSource;
 
+document.querySelectorAll('code').forEach((block) => {
+  originalLog('Highlight auto');
+  hljs.highlightBlock(block);
+});
+
 input.onkeyup = function () {
   localStorage.setItem("src", input.innerText);
-  originalLog("key up");
-  
-  document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('code').forEach((block) => {
-    originalLog("update block 0");
-    hljs.highlightBlock(block);
-  });
-});
   
   document.querySelectorAll('code').forEach((block) => {
-    originalLog('Update block');
-    hljs.highlightBlock(block);
+    originalLog('Update block 3');
+    // hljs.highlightBlock(block);
   });
 }
 
