@@ -8,6 +8,15 @@ if (lastSource) input.innerText = lastSource;
 
 input.onkeyup = function () {
   localStorage.setItem("src", input.innerText);
+  originalLog("key up");
+  
+  document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('code').forEach((block) => {
+    originalLog("update block 0");
+    hljs.highlightBlock(block);
+  });
+});
+  
   document.querySelectorAll('code').forEach((block) => {
     originalLog('Update block');
     hljs.highlightBlock(block);
