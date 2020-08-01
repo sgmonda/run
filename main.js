@@ -1,3 +1,5 @@
+console.log("Preparing runner...");
+
 input = document.getElementById("input");
 output = document.getElementById("output");
 
