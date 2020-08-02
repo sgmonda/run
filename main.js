@@ -53,5 +53,10 @@ console.clear = function(...args) {
 
 document.getElementById("button-run").onclick = function run() {
   output.innerHTML = '';
-  eval(input.innerText)
+  try {
+    eval(input.innerText)
+  } catch (err) {
+    originalError(err);
+    throw err;
+  }
 }
