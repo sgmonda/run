@@ -56,7 +56,7 @@ document.getElementById("button-run").onclick = function run() {
   try {
     eval(input.innerText)
   } catch (err) {
-    originalError(err);
+    console.error(err);
     throw err;
   }
 }
