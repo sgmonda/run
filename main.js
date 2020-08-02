@@ -31,7 +31,7 @@ const originalInfo = console.info;
 const originalClear = console.clear;
 
 console.error = function(error) {
-  add(error.toString() + error.stack, '#ff0000');
+  add(error.toString()/* + error.stack*/, '#ff0000');
   originalError.apply(console, arguments);
 };
 console.log = function(...args) {
