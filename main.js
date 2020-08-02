@@ -20,9 +20,9 @@ input.onkeyup = function () {
   });
 }
 
-const add = something => {
+const add = (something, color = '#000') => {
   originalLog('PRINT', something);
-  output.innerHTML = output.innerHTML + something + '<br/>';
+  output.innerHTML = output.innerHTML + '<div style="color: ' + color + '">' + something + '</div><br/>';
 }
 const originalError = console.error;
 const originalLog = console.log;
@@ -31,7 +31,7 @@ const originalInfo = console.info;
 const originalClear = console.clear;
 
 console.error = function(error) {
-  add(error.toString() + error.stack);
+  add(error.toString() + error.stack, '#ff0000');
   originalError.apply(console, arguments);
 };
 console.log = function(...args) {
